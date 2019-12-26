@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"service-frame/pkg/loger"
 	"service-frame/pkg/setting"
 )
 
@@ -10,7 +10,7 @@ func main() {
 	t := setting.AppConfig.GetTime("TimeStamp")
 	t1 := setting.AppConfig.GetInt("Favorite.LuckyNumber1")
 
-	fmt.Println(str)
-	fmt.Println(t)
-	fmt.Println(t1)
+	loger.Apploger.WithField("str", str).Warnln("this is a warn")
+	loger.Apploger.WithField("t", t).Warnln("this is a warn")
+	loger.Apploger.WithField("t1", t1).Warnln("this is a warn")
 }

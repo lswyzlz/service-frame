@@ -1,5 +1,4 @@
-#debug or release
-runmode: debug
+runmode: debug #debug release
 
 app:
 pagesize : 10
@@ -17,3 +16,10 @@ database:
     host : 127.0.0.1:3306
     name : blog
     tableprefix : blog_
+
+log:
+    filename: app.log
+    filepath: ./logs
+    level: TraceLevel # PanicLevel FatalLevel ErrorLevel WarnLevel InfoLevel DebugLevel TraceLevel
+    maxage: 168 #24 * 7 单位小时
+    rotation:  24 #24 * 1 单位小时
